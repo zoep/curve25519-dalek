@@ -209,11 +209,7 @@ use subtle::ConditionallySelectable;
 
 impl ConditionallySelectable for F51x4Reduced {
     #[inline]
-    fn conditional_select(
-        a: &F51x4Reduced,
-        b: &F51x4Reduced,
-        choice: Choice,
-    ) -> F51x4Reduced {
+    fn conditional_select(a: &F51x4Reduced, b: &F51x4Reduced, choice: Choice) -> F51x4Reduced {
         let mask = (-(choice.unwrap_u8() as i64)) as u64;
         let mask_vec = u64x4::splat(mask);
         F51x4Reduced([
