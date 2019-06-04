@@ -14,12 +14,18 @@ use packed_simd::{u64x4, IntoBits};
 
 use backend::serial::u64::field::FieldElement51;
 
-#[allow(improper_ctypes)]
-extern "C" {
-    #[link_name = "llvm.x86.avx512.vpmadd52l.uq.256"]
-    fn madd52lo(z: u64x4, x: u64x4, y: u64x4) -> u64x4;
-    #[link_name = "llvm.x86.avx512.vpmadd52h.uq.256"]
-    fn madd52hi(z: u64x4, x: u64x4, y: u64x4) -> u64x4;
+/// A wrapper around `vpmadd52luq` that works on `u64x4`.
+#[inline(always)]
+fn madd52lo(z: u64x4, x: u64x4, y: u64x4) -> u64x4 {
+    use core::arch::x86_64::_mm256_madd52lo_epu64;
+    _mm256_madd52lo_epu64(z.into_bits(), x.into_bits(), y.into_bits()).into_bits()
+}
+
+/// A wrapper around `vpmadd52huq` that works on `u64x4`.
+#[inline(always)]
+fn madd52hi(z: u64x4, x: u64x4, y: u64x4) -> u64x4 {
+    use core::arch::x86_64::_mm256_madd52hi_epu64;
+    _mm256_madd52hi_epu64(z.into_bits(), x.into_bits(), y.into_bits()).into_bits()
 }
 
 /// A vector of four field elements in radix 2^51, with unreduced coefficients.
