@@ -9,13 +9,6 @@
 // - Henry de Valence <hdevalence@hdevalence.ca>
 
 #![no_std]
-#![cfg_attr(
-    any(
-        all(feature = "simd_backend", target_feature = "avx512ifma"),
-        all(feature = "nightly", rustdoc)
-    ),
-    feature(simd_ffi, link_llvm_intrinsics)
-)]
 #![cfg_attr(feature = "nightly", feature(test))]
 #![cfg_attr(all(feature = "alloc", not(feature = "std")), feature(alloc))]
 #![cfg_attr(feature = "nightly", feature(external_doc))]
