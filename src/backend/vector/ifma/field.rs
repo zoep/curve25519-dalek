@@ -16,14 +16,14 @@ use backend::serial::u64::field::FieldElement51;
 
 /// A wrapper around `vpmadd52luq` that works on `u64x4`.
 #[inline(always)]
-fn madd52lo(z: u64x4, x: u64x4, y: u64x4) -> u64x4 {
+unsafe fn madd52lo(z: u64x4, x: u64x4, y: u64x4) -> u64x4 {
     use core::arch::x86_64::_mm256_madd52lo_epu64;
     _mm256_madd52lo_epu64(z.into_bits(), x.into_bits(), y.into_bits()).into_bits()
 }
 
 /// A wrapper around `vpmadd52huq` that works on `u64x4`.
 #[inline(always)]
-fn madd52hi(z: u64x4, x: u64x4, y: u64x4) -> u64x4 {
+unsafe fn madd52hi(z: u64x4, x: u64x4, y: u64x4) -> u64x4 {
     use core::arch::x86_64::_mm256_madd52hi_epu64;
     _mm256_madd52hi_epu64(z.into_bits(), x.into_bits(), y.into_bits()).into_bits()
 }
