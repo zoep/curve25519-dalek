@@ -13,6 +13,7 @@
 #![cfg_attr(all(feature = "alloc", not(feature = "std")), feature(alloc))]
 #![cfg_attr(feature = "nightly", feature(external_doc))]
 #![cfg_attr(feature = "nightly", feature(doc_cfg))]
+#![cfg_attr(feature = "simd_backend", feature(stdsimd))]
 // Refuse to compile if documentation is missing, but only on nightly.
 //
 // This means that missing docs will still fail CI, but means we can use
