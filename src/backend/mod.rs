@@ -33,8 +33,11 @@
 //! The [`vector`] backend is selected by the `simd_backend` cargo
 //! feature; it uses the [`serial`] backend for non-vectorized operations.
 
+extern crate subtle;
+
 #[cfg(not(any(
     feature = "u32_backend",
+    feature = "fiat_u64_backend",
     feature = "u64_backend",
     feature = "simd_backend",
 )))]

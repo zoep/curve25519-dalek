@@ -54,6 +54,7 @@ extern crate rand_core;
 #[cfg(all(test, feature = "stage2_build"))]
 extern crate rand_os;
 
+extern crate rust_curve25519_fiat;
 // Used for traits related to constant-time code.
 extern crate subtle;
 

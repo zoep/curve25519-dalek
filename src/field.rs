@@ -42,6 +42,16 @@ pub use backend::serial::u64::field::*;
 #[cfg(feature = "u64_backend")]
 pub type FieldElement = backend::serial::u64::field::FieldElement51;
 
+#[cfg(feature = "fiat_u64_backend")]
+pub use backend::serial::fiat::field::*;
+/// A `FieldElement` represents an element of the field
+/// \\( \mathbb Z / (2\^{255} - 19)\\).
+///
+/// The `FieldElement` type is an alias for one of the platform-specific
+/// implementations.
+#[cfg(feature = "fiat_u64_backend")]
+pub type FieldElement = backend::serial::fiat::field::FieldElement51;
+
 #[cfg(feature = "u32_backend")]
 pub use backend::serial::u32::field::*;
 /// A `FieldElement` represents an element of the field
