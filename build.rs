@@ -37,7 +37,7 @@ use std::path::Path;
 #[cfg(feature = "serde")]
 extern crate serde;
 
-extern crate rust_curve25519_fiat;
+extern crate curve25519_fiat_sys;
 
 // Macros come first!
 #[path = "src/macros.rs"]
