@@ -37,6 +37,7 @@ use std::path::Path;
 #[cfg(feature = "serde")]
 extern crate serde;
 
+#[cfg(feature = "fiat_u64_backend")]
 extern crate curve25519_fiat_sys;
 
 // Macros come first!

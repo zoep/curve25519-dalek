@@ -44,7 +44,6 @@ harness = false
 # match exactly, since the build.rs uses the crate itself as a library.
 
 [dependencies]
-curve25519-fiat-sys = { version = "0.1.12" }
 rand_core = { version = "0.3.0", default-features = false }
 byteorder = { version = "^1.2.3", default-features = false, features = ["i128"] }
 digest = { version = "0.8", default-features = false }
@@ -52,9 +51,9 @@ clear_on_drop = "=0.2.3"
 subtle = { version = "2", default-features = false }
 serde = { version = "1.0", default-features = false, optional = true }
 packed_simd = { version = "0.3.0", features = ["into_bits"], optional = true }
+curve25519-fiat-sys = { version = "0.1.12", optional = true}
 
 [build-dependencies]
-curve25519-fiat-sys = { version = "0.1.12" }
 rand_core = { version = "0.3.0", default-features = false }
 byteorder = { version = "^1.2.3", default-features = false, features = ["i128"] }
 digest = { version = "0.8", default-features = false }
@@ -62,6 +61,7 @@ clear_on_drop = "=0.2.3"
 subtle = { version = "2", default-features = false }
 serde = { version = "1.0", default-features = false, optional = true }
 packed_simd = { version = "0.3.0", features = ["into_bits"], optional = true }
+curve25519-fiat-sys = { version = "0.1.12", optional = true}
 
 [features]
 nightly = ["subtle/nightly", "clear_on_drop/nightly"]
@@ -73,7 +73,7 @@ yolocrypto = []
 # The u32 backend uses u32s with u64 products.
 u32_backend = []
 # The fiat_u64 backend uses u64s with u128 products.
-fiat_u64_backend = []
+fiat_u64_backend = [ "curve25519-fiat-sys" ]
 # The u64 backend uses u64s with u128 products.
 u64_backend = []
 # The SIMD backend uses parallel formulas, using either AVX2 or AVX512-IFMA.

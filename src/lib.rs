@@ -53,6 +53,7 @@ extern crate rand_core;
 #[cfg(all(test, feature = "stage2_build"))]
 extern crate rand_os;
 
+#[cfg(feature = "fiat_u64_backend")]
 extern crate curve25519_fiat_sys;
 // Used for traits related to constant-time code.
 extern crate subtle;
