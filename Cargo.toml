@@ -44,7 +44,7 @@ harness = false
 # match exactly, since the build.rs uses the crate itself as a library.
 
 [dependencies]
-curve25519-fiat-sys = { version = "=0.1.10" }
+curve25519-fiat-sys = { version = "0.1.12" }
 rand_core = { version = "0.3.0", default-features = false }
 byteorder = { version = "^1.2.3", default-features = false, features = ["i128"] }
 digest = { version = "0.8", default-features = false }
@@ -54,7 +54,7 @@ serde = { version = "1.0", default-features = false, optional = true }
 packed_simd = { version = "0.3.0", features = ["into_bits"], optional = true }
 
 [build-dependencies]
-curve25519-fiat-sys = { version = "=0.1.10" }
+curve25519-fiat-sys = { version = "0.1.12" }
 rand_core = { version = "0.3.0", default-features = false }
 byteorder = { version = "^1.2.3", default-features = false, features = ["i128"] }
 digest = { version = "0.8", default-features = false }
