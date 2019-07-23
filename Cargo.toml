@@ -74,6 +74,8 @@ yolocrypto = []
 u32_backend = []
 # The fiat_u64 backend uses u64s with u128 products.
 fiat_u64_backend = [ "curve25519-fiat-sys" ]
+# The fiat-rust_u64 backend uses u64s with u128 products.
+fiat-rust_u64_backend = []
 # The u64 backend uses u64s with u128 products.
 u64_backend = []
 # The SIMD backend uses parallel formulas, using either AVX2 or AVX512-IFMA.

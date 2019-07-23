@@ -38,8 +38,9 @@ extern crate subtle;
 #[cfg(not(any(
     feature = "u32_backend",
     feature = "fiat_u64_backend",
+    feature = "fiat-rust_u64_backend",
     feature = "u64_backend",
-    feature = "simd_backend",
+    feature = "simd_backend"
 )))]
 compile_error!(
     "no curve25519-dalek backend cargo feature enabled! \

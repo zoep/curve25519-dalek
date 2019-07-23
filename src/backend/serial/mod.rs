@@ -22,7 +22,7 @@
 //! Note: at this time the `u32` and `u64` backends cannot be built
 //! together.
 
-#[cfg(not(any(feature = "u32_backend", feature = "u64_backend", feature = "fiat_u64_backend")))]
+#[cfg(not(any(feature = "u32_backend", feature = "u64_backend", feature = "fiat_u64_backend", feature = "fiat-rust_u64_backend")))]
 compile_error!(
     "no curve25519-dalek backend cargo feature enabled! \
      please enable one of: u32_backend, u64_backend"
@@ -38,6 +38,9 @@ pub mod curve_models;
 
 #[cfg(feature = "fiat_u64_backend")]
 pub mod fiat;
+
+#[cfg(feature = "fiat-rust_u64_backend")]
+pub mod fiat_rust;
 
 #[cfg(not(all(
     feature = "simd_backend",

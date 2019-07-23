@@ -37,6 +37,8 @@ use scalar::Scalar;
 pub use backend::serial::u64::constants::*;
 #[cfg(feature = "fiat_u64_backend")]
 pub use backend::serial::fiat::constants::*;
+#[cfg(feature = "fiat-rust_u64_backend")]
+pub use backend::serial::fiat_rust::constants::*;
 #[cfg(feature = "u32_backend")]
 pub use backend::serial::u32::constants::*;
 

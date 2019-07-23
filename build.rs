@@ -96,6 +96,9 @@ use backend::serial::u64::field::FieldElement51;
 #[cfg(feature = \"fiat_u64_backend\")]
 use backend::serial::fiat::field::FieldElement51;
 
+#[cfg(feature = \"fiat-rust_u64_backend\")]
+use backend::serial::fiat_rust::field::FieldElement51;
+
 use edwards::EdwardsBasepointTable;
 
 use backend::serial::curve_models::AffineNielsPoint;
