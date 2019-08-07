@@ -24,5 +24,3 @@ pub mod field;
 pub mod scalar;
 
 pub mod constants;
-
-pub mod curve25519_64;

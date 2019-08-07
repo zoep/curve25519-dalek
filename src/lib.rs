@@ -58,6 +58,9 @@ extern crate curve25519_fiat_sys;
 // Used for traits related to constant-time code.
 extern crate subtle;
 
+#[cfg(feature = "fiat-rust_u64_backend")]
+extern crate curve25519_fiat;
+
 #[cfg(all(test, feature = "serde"))]
 extern crate bincode;
 #[cfg(feature = "serde")]
