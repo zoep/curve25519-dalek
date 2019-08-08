@@ -20,7 +20,7 @@ use core::ops::{Sub, SubAssign};
 use subtle::Choice;
 use subtle::ConditionallySelectable;
 
-use curve25519_fiat::*;
+use curve25519_fiat::curve25519_64::*;
 
 /// A `FieldElement51` represents an element of the field
 /// \\( \mathbb Z / (2\^{255} - 19)\\).

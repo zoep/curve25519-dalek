@@ -40,6 +40,9 @@ extern crate serde;
 #[cfg(feature = "fiat_u64_backend")]
 extern crate curve25519_fiat_sys;
 
+#[cfg(feature = "fiat-rust_u64_backend")]
+extern crate curve25519_fiat;
+
 // Macros come first!
 #[path = "src/macros.rs"]
 #[macro_use]
