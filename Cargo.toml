@@ -52,7 +52,7 @@ subtle = { version = "2", default-features = false }
 serde = { version = "1.0", default-features = false, optional = true }
 packed_simd = { version = "0.3.0", features = ["into_bits"], optional = true }
 curve25519-fiat-sys = { version = "0.1.12", optional = true}
-curve25519-fiat = { git = "https://github.com/zoep/rust-curve25519-fiat", branch = "fiat-rust", version = "0.1.10", optional = true}
+curve25519-fiat = { git = "https://github.com/zoep/rust-curve25519-fiat.git", branch = "fiat-rust", version = "0.1.10", optional = true}
 
 [build-dependencies]
 rand_core = { version = "0.3.0", default-features = false }
@@ -63,7 +63,7 @@ subtle = { version = "2", default-features = false }
 serde = { version = "1.0", default-features = false, optional = true }
 packed_simd = { version = "0.3.0", features = ["into_bits"], optional = true }
 curve25519-fiat-sys = { version = "0.1.12", optional = true}
-curve25519-fiat = { git = "https://github.com/zoep/rust-curve25519-fiat", branch = "fiat-rust", version = "0.1.10", optional = true}
+curve25519-fiat = { git = "https://github.com/zoep/rust-curve25519-fiat.git", branch = "fiat-rust", version = "0.1.10", optional = true}
 
 [features]
 nightly = ["subtle/nightly", "clear_on_drop/nightly"]
